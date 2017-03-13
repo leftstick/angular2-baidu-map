@@ -6,7 +6,7 @@ export declare class BaiduMap implements OnInit, OnChanges {
     ak: string;
     protocol: string;
     options: MapOptions;
-    offlineOpts: OfflineOptions;
+    offline: OfflineOptions;
     onMapLoaded: EventEmitter<{}>;
     onMarkerClicked: EventEmitter<{}>;
     map: any;
@@ -27,5 +27,7 @@ export { NavigationControlOptions } from './controls/NavigationControl';
 export { Icon } from './interfaces/Icon';
 export { Size } from './interfaces/Size';
 export { ControlAnchor } from './enum/ControlAnchor';
-export * from './enum/NavigationControlType';
+export { NavigationControlType } from './enum/NavigationControlType';
 export { MapStatus } from './enum/MapStatus';
+export declare class BaiduMapModule {
+}
