@@ -1,4 +1,16 @@
-import { Component, SimpleChange, Input, Output, EventEmitter, OnInit, OnChanges, ChangeDetectionStrategy, ElementRef } from '@angular/core';
+import {
+    Component,
+    SimpleChange,
+    Input,
+    Output,
+    EventEmitter,
+    OnInit,
+    OnChanges,
+    ChangeDetectionStrategy,
+    ElementRef,
+    NgModule
+} from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { MapOptions, OfflineOptions } from './interfaces/Options';
 import { PreviousMarker } from './interfaces/PreviousMarker';
@@ -38,7 +50,7 @@ export class BaiduMap implements OnInit, OnChanges {
     @Input() ak: string;
     @Input() protocol: string;
     @Input() options: MapOptions;
-    @Input('offline') offlineOpts: OfflineOptions;
+    @Input() offline: OfflineOptions;
     @Output() onMapLoaded = new EventEmitter();
     @Output() onMarkerClicked = new EventEmitter();
 
@@ -49,9 +61,9 @@ export class BaiduMap implements OnInit, OnChanges {
     constructor(private el: ElementRef) { }
 
     ngOnInit() {
-        let offlineOpts: OfflineOptions = Object.assign({}, defaultOfflineOpts, this.offlineOpts);
-        this.offlineWords = offlineOpts.txt;
-        loader(this.ak, offlineOpts, this._draw.bind(this), this.protocol);
+        let offline: OfflineOptions = Object.assign({}, defaultOfflineOpts, this.offline);
+        this.offlineWords = offline.txt;
+        loader(this.ak, offline, this._draw.bind(this), this.protocol);
     }
 
     ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
@@ -76,6 +88,10 @@ export class BaiduMap implements OnInit, OnChanges {
     }
 }
 
+
+
+
+
 export { MarkerOptions, MapDefaultOptions, MapOptions, OfflineOptions } from './interfaces/Options';
 export { GeolocationControlOptions } from './controls/GeoControl';
 export { ScaleControlOptions } from './controls/ScaleControl';
@@ -84,5 +100,22 @@ export { NavigationControlOptions } from './controls/NavigationControl';
 export { Icon } from './interfaces/Icon';
 export { Size } from './interfaces/Size';
 export { ControlAnchor } from './enum/ControlAnchor';
-export * from './enum/NavigationControlType';
+export { NavigationControlType } from './enum/NavigationControlType';
 export { MapStatus } from './enum/MapStatus';
+
+
+
+
+
+@NgModule({
+    imports: [
+        CommonModule,
+    ],
+    declarations: [
+        BaiduMap
+    ],
+    exports: [
+        BaiduMap
+    ]
+})
+export class BaiduMapModule { }
