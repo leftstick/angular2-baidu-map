@@ -1,8 +1,8 @@
-import {MapObjct} from './interfaces/MapObjct';
-import {MapStatus} from './enum/MapStatus';
-import {OfflineOptions} from './interfaces/Options';
+import { MapObjct } from './interfaces/MapObjct';
+import { MapStatus } from './enum/MapStatus';
+import { OfflineOptions } from './interfaces/Options';
 
-export const loader = function(ak: string, offlineOpts: OfflineOptions, callback: Function, protocol: string) {
+export function loader(ak: string, offlineOpts: OfflineOptions, callback: Function, protocol: string) {
     let realProtocol = protocol || location.protocol;
     let MAP_URL: string = `${realProtocol}//api.map.baidu.com/api?v=2.0&ak=${ak}&callback=baidumapinit&s=${realProtocol === 'https:' ? 1 : 0}`;
 
@@ -18,22 +18,22 @@ export const loader = function(ak: string, offlineOpts: OfflineOptions, callback
     }
 
     win['baiduMap'] = { status: MapStatus.LOADING, callbacks: [] };
-    win['baidumapinit'] = function() {
+    win['baidumapinit'] = function () {
         win['baiduMap'].status = MapStatus.LOADED;
         callback();
         win['baiduMap'].callbacks.forEach((cb: Function) => cb());
         win['baiduMap'].callbacks = [];
     };
 
-    let createTag = function() {
+    let createTag = function () {
         let script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = MAP_URL;
-        script.onerror = function() {
+        script.onerror = function () {
             Array.prototype
                 .slice
                 .call(document.querySelectorAll('baidu-map div'))
-                .forEach(function(node: any) {
+                .forEach(function (node: any) {
                     node.style.opacity = 1;
                 });
             document.body.removeChild(script);

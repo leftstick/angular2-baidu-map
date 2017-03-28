@@ -1,25 +1,25 @@
-import {MapOptions, MarkerOptions} from './interfaces/Options';
-import {PreviousMarker} from './interfaces/PreviousMarker';
+import { MapOptions, MarkerOptions } from './interfaces/Options';
+import { PreviousMarker } from './interfaces/PreviousMarker';
 
-import {setGeoCtrl} from './controls/GeoControl';
-import {setScaleCtrl} from './controls/ScaleControl';
-import {setOverviewMapCtrl} from './controls/OverviewMapControl';
-import {setNavigationCtrl} from './controls/NavigationControl';
+import { setGeoCtrl } from './controls/GeoControl';
+import { setScaleCtrl } from './controls/ScaleControl';
+import { setOverviewMapCtrl } from './controls/OverviewMapControl';
+import { setNavigationCtrl } from './controls/NavigationControl';
 
-export const reCenter = function(map: any, opts: MapOptions) {
+export function reCenter(map: any, opts: MapOptions) {
     var BMap: any = (<any>window)['BMap'];
     if (opts.center) {
         map.setCenter(new BMap.Point(opts.center.longitude, opts.center.latitude));
     }
 };
 
-export const reZoom = function(map: any, opts: MapOptions) {
+export function reZoom(map: any, opts: MapOptions) {
     if (opts.zoom) {
         map.setZoom(opts.zoom);
     }
 };
 
-export const createInstance = function(opts: MapOptions, element: any) {
+export function createInstance(opts: MapOptions, element: any) {
     var BMap: any = (<any>window)['BMap'];
     // create map instance
     var map = new BMap.Map(element);
@@ -38,7 +38,7 @@ export const createInstance = function(opts: MapOptions, element: any) {
     return map;
 };
 
-export const createMarker = function(marker: MarkerOptions, pt: any) {
+export function createMarker(marker: MarkerOptions, pt: any) {
     var BMap: any = (<any>window)['BMap'];
     var opts: any = {};
     if (marker.icon) {
@@ -51,11 +51,11 @@ export const createMarker = function(marker: MarkerOptions, pt: any) {
     return new BMap.Marker(pt, opts);
 };
 
-export const redrawMarkers = function(map: any, previousMarkers: PreviousMarker[], opts: MapOptions) {
+export function redrawMarkers(map: any, previousMarkers: PreviousMarker[], opts: MapOptions) {
     var BMap: any = (<any>window)['BMap'];
     var self = this;
 
-    previousMarkers.forEach(function({marker, listeners}) {
+    previousMarkers.forEach(function ({ marker, listeners }) {
         listeners.forEach(listener => { marker.removeEventListener('click', listener); });
         map.removeOverlay(marker);
     });
@@ -66,7 +66,7 @@ export const redrawMarkers = function(map: any, previousMarkers: PreviousMarker[
         return;
     }
 
-    opts.markers.forEach(function(marker: MarkerOptions) {
+    opts.markers.forEach(function (marker: MarkerOptions) {
 
         var marker2 = createMarker(marker, new BMap.Point(marker.longitude, marker.latitude));
 
@@ -92,7 +92,7 @@ export const redrawMarkers = function(map: any, previousMarkers: PreviousMarker[
         if (marker.autoDisplayInfoWindow) {
             marker2.openInfoWindow(infoWindow2);
         }
-        let openInfoWindowListener = function() {
+        let openInfoWindowListener = function () {
             this.openInfoWindow(infoWindow2);
         };
         previousMarker.listeners.push(openInfoWindowListener);

@@ -1,9 +1,9 @@
-import {MapOptions} from '../interfaces/Options';
+import { MapOptions } from '../interfaces/Options';
 
-import {ControlAnchor} from '../enum/ControlAnchor';
-import {Size} from '../interfaces/Size';
+import { ControlAnchor } from '../enum/ControlAnchor';
+import { Size } from '../interfaces/Size';
 
-export const setOverviewMapCtrl = function(map: any, opts: MapOptions) {
+export function setOverviewMapCtrl(map: any, opts: MapOptions) {
     var BMap: any = (<any>window)['BMap'];
     //enable OverviewMapControl
     var overviewOpts: any = {};
