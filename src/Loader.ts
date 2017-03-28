@@ -8,7 +8,7 @@ export function loader(ak: string, offlineOpts: OfflineOptions, callback: Functi
 
     let win: any = (<any>window);
 
-    let baiduMap: MapObjct = win['baiduMap'];
+    let baiduMap: MapObjct = win.baiduMap;
     if (baiduMap && baiduMap.status === MapStatus.LOADING) {
         return baiduMap.callbacks.push(callback);
     }
@@ -17,12 +17,12 @@ export function loader(ak: string, offlineOpts: OfflineOptions, callback: Functi
         return callback();
     }
 
-    win['baiduMap'] = { status: MapStatus.LOADING, callbacks: [] };
-    win['baidumapinit'] = function () {
-        win['baiduMap'].status = MapStatus.LOADED;
+    win.baiduMap = { status: MapStatus.LOADING, callbacks: [] };
+    win.baidumapinit = function () {
+        win.baiduMap.status = MapStatus.LOADED;
         callback();
-        win['baiduMap'].callbacks.forEach((cb: Function) => cb());
-        win['baiduMap'].callbacks = [];
+        win.baiduMap.callbacks.forEach((cb: Function) => cb());
+        win.baiduMap.callbacks = [];
     };
 
     let createTag = function () {

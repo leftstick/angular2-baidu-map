@@ -1,6 +1,6 @@
 import {
   Component,
-  SimpleChange,
+  SimpleChanges,
   Input,
   Output,
   EventEmitter,
@@ -66,15 +66,15 @@ export class BaiduMapComponent implements OnInit, OnChanges {
     loader(this.ak, offline, this._draw.bind(this), this.protocol);
   }
 
-  ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
-    let baiduMap = (<any>window)['baiduMap'];
+  ngOnChanges(changes: SimpleChanges) {
+    let baiduMap = (<any>window).baiduMap;
     if (!baiduMap || baiduMap.status !== MapStatus.LOADED) {
       return;
     }
-    if (changes['options'].isFirstChange() && !this.map) {
+    if (changes.options.isFirstChange() && !this.map) {
       return;
     }
-    let opts = changes['options'].currentValue;
+    let opts = changes.options.currentValue;
     reCenter(this.map, opts);
     reZoom(this.map, opts);
     redrawMarkers.bind(this)(this.map, this.previousMarkers, opts);

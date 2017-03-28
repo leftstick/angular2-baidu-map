@@ -5,7 +5,7 @@ import { Size } from '../interfaces/Size';
 import { Icon } from '../interfaces/Icon';
 
 export function setGeoCtrl(map: any, opts: MapOptions) {
-    var BMap: any = (<any>window)['BMap'];
+    var BMap: any = (<any>window).BMap;
     //enable GeolocationControl
     var geoOpts: any = {};
     if (typeof opts.geolocationCtrl !== 'boolean') {

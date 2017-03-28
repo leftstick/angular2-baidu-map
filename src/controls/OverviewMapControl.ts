@@ -4,7 +4,7 @@ import { ControlAnchor } from '../enum/ControlAnchor';
 import { Size } from '../interfaces/Size';
 
 export function setOverviewMapCtrl(map: any, opts: MapOptions) {
-    var BMap: any = (<any>window)['BMap'];
+    var BMap: any = (<any>window).BMap;
     //enable OverviewMapControl
     var overviewOpts: any = {};
     if (typeof opts.overviewCtrl !== 'boolean') {

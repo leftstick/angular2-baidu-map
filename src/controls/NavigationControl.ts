@@ -5,7 +5,7 @@ import { Size } from '../interfaces/Size';
 import { NavigationControlType } from '../enum/NavigationControlType';
 
 export function setNavigationCtrl(map: any, opts: MapOptions) {
-    var BMap: any = (<any>window)['BMap'];
+    var BMap: any = (<any>window).BMap;
     //enable NavigationControl
     var navOpts: any = {};
     if (typeof opts.navCtrl !== 'boolean') {

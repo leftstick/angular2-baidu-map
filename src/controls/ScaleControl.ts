@@ -4,7 +4,7 @@ import { ControlAnchor } from '../enum/ControlAnchor';
 import { Size } from '../interfaces/Size';
 
 export function setScaleCtrl(map: any, opts: MapOptions) {
-    var BMap: any = (<any>window)['BMap'];
+    var BMap: any = (<any>window).BMap;
     //enable ScaleControl
     var scaleOpts: any = {};
     if (typeof opts.scaleCtrl !== 'boolean') {

@@ -136,14 +136,14 @@ module.exports =
 	        Loader_1.loader(this.ak, offline, this._draw.bind(this), this.protocol);
 	    };
 	    BaiduMapComponent.prototype.ngOnChanges = function (changes) {
-	        var baiduMap = window['baiduMap'];
+	        var baiduMap = window.baiduMap;
 	        if (!baiduMap || baiduMap.status !== MapStatus_1.MapStatus.LOADED) {
 	            return;
 	        }
-	        if (changes['options'].isFirstChange() && !this.map) {
+	        if (changes.options.isFirstChange() && !this.map) {
 	            return;
 	        }
-	        var opts = changes['options'].currentValue;
+	        var opts = changes.options.currentValue;
 	        CoreOperations_1.reCenter(this.map, opts);
 	        CoreOperations_1.reZoom(this.map, opts);
 	        CoreOperations_1.redrawMarkers.bind(this)(this.map, this.previousMarkers, opts);
@@ -229,19 +229,19 @@ module.exports =
 	    var realProtocol = protocol || location.protocol;
 	    var MAP_URL = realProtocol + "//api.map.baidu.com/api?v=2.0&ak=" + ak + "&callback=baidumapinit&s=" + (realProtocol === 'https:' ? 1 : 0);
 	    var win = window;
-	    var baiduMap = win['baiduMap'];
+	    var baiduMap = win.baiduMap;
 	    if (baiduMap && baiduMap.status === MapStatus_1.MapStatus.LOADING) {
 	        return baiduMap.callbacks.push(callback);
 	    }
 	    if (baiduMap && baiduMap.status === MapStatus_1.MapStatus.LOADED) {
 	        return callback();
 	    }
-	    win['baiduMap'] = { status: MapStatus_1.MapStatus.LOADING, callbacks: [] };
-	    win['baidumapinit'] = function () {
-	        win['baiduMap'].status = MapStatus_1.MapStatus.LOADED;
+	    win.baiduMap = { status: MapStatus_1.MapStatus.LOADING, callbacks: [] };
+	    win.baidumapinit = function () {
+	        win.baiduMap.status = MapStatus_1.MapStatus.LOADED;
 	        callback();
-	        win['baiduMap'].callbacks.forEach(function (cb) { return cb(); });
-	        win['baiduMap'].callbacks = [];
+	        win.baiduMap.callbacks.forEach(function (cb) { return cb(); });
+	        win.baiduMap.callbacks = [];
 	    };
 	    var createTag = function () {
 	        var script = document.createElement('script');
@@ -276,7 +276,7 @@ module.exports =
 	var OverviewMapControl_1 = __webpack_require__(11);
 	var NavigationControl_1 = __webpack_require__(12);
 	function reCenter(map, opts) {
-	    var BMap = window['BMap'];
+	    var BMap = window.BMap;
 	    if (opts.center) {
 	        map.setCenter(new BMap.Point(opts.center.longitude, opts.center.latitude));
 	    }
@@ -291,7 +291,7 @@ module.exports =
 	exports.reZoom = reZoom;
 	;
 	function createInstance(opts, element) {
-	    var BMap = window['BMap'];
+	    var BMap = window.BMap;
 	    // create map instance
 	    var map = new BMap.Map(element);
 	    // init map, set central location and zoom level
@@ -309,21 +309,21 @@ module.exports =
 	exports.createInstance = createInstance;
 	;
 	function createMarker(marker, pt) {
-	    var BMap = window['BMap'];
+	    var BMap = window.BMap;
 	    var opts = {};
 	    if (marker.icon) {
 	        var icon = new BMap.Icon(marker.icon, new BMap.Size(marker.width, marker.height));
 	        opts[icon] = icon;
 	    }
 	    if (marker.enableDragging) {
-	        opts['enableDragging'] = true;
+	        opts.enableDragging = true;
 	    }
 	    return new BMap.Marker(pt, opts);
 	}
 	exports.createMarker = createMarker;
 	;
 	function redrawMarkers(map, previousMarkers, opts) {
-	    var BMap = window['BMap'];
+	    var BMap = window.BMap;
 	    var self = this;
 	    previousMarkers.forEach(function (_a) {
 	        var marker = _a.marker, listeners = _a.listeners;
@@ -373,7 +373,7 @@ module.exports =
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
 	function setGeoCtrl(map, opts) {
-	    var BMap = window['BMap'];
+	    var BMap = window.BMap;
 	    //enable GeolocationControl
 	    var geoOpts = {};
 	    if (typeof opts.geolocationCtrl !== 'boolean') {
@@ -410,7 +410,7 @@ module.exports =
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
 	function setScaleCtrl(map, opts) {
-	    var BMap = window['BMap'];
+	    var BMap = window.BMap;
 	    //enable ScaleControl
 	    var scaleOpts = {};
 	    if (typeof opts.scaleCtrl !== 'boolean') {
@@ -438,7 +438,7 @@ module.exports =
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
 	function setOverviewMapCtrl(map, opts) {
-	    var BMap = window['BMap'];
+	    var BMap = window.BMap;
 	    //enable OverviewMapControl
 	    var overviewOpts = {};
 	    if (typeof opts.overviewCtrl !== 'boolean') {
@@ -473,7 +473,7 @@ module.exports =
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
 	function setNavigationCtrl(map, opts) {
-	    var BMap = window['BMap'];
+	    var BMap = window.BMap;
 	    //enable NavigationControl
 	    var navOpts = {};
 	    if (typeof opts.navCtrl !== 'boolean') {

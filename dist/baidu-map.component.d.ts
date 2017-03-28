@@ -1,4 +1,4 @@
-import { SimpleChange, EventEmitter, OnInit, OnChanges, ElementRef } from '@angular/core';
+import { SimpleChanges, EventEmitter, OnInit, OnChanges, ElementRef } from '@angular/core';
 import { MapOptions, OfflineOptions } from './interfaces/Options';
 import { PreviousMarker } from './interfaces/PreviousMarker';
 export declare class BaiduMapComponent implements OnInit, OnChanges {
@@ -14,8 +14,6 @@ export declare class BaiduMapComponent implements OnInit, OnChanges {
     previousMarkers: PreviousMarker[];
     constructor(el: ElementRef);
     ngOnInit(): void;
-    ngOnChanges(changes: {
-        [propertyName: string]: SimpleChange;
-    }): void;
+    ngOnChanges(changes: SimpleChanges): void;
     _draw(): void;
 }
