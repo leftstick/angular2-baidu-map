@@ -49,10 +49,10 @@ module.exports =
 	Object.defineProperty(exports, "__esModule", { value: true });
 	var ControlAnchor_1 = __webpack_require__(1);
 	exports.ControlAnchor = ControlAnchor_1.ControlAnchor;
-	var NavigationControlType_1 = __webpack_require__(2);
-	exports.NavigationControlType = NavigationControlType_1.NavigationControlType;
-	var MapStatus_1 = __webpack_require__(3);
+	var MapStatus_1 = __webpack_require__(2);
 	exports.MapStatus = MapStatus_1.MapStatus;
+	var NavigationControlType_1 = __webpack_require__(3);
+	exports.NavigationControlType = NavigationControlType_1.NavigationControlType;
 	var baidu_map_component_1 = __webpack_require__(4);
 	exports.BaiduMapComponent = baidu_map_component_1.BaiduMapComponent;
 	var baidu_map_module_1 = __webpack_require__(13);
@@ -80,13 +80,12 @@ module.exports =
 
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
-	var NavigationControlType;
-	(function (NavigationControlType) {
-	    NavigationControlType[NavigationControlType["BMAP_NAVIGATION_CONTROL_LARGE"] = 0] = "BMAP_NAVIGATION_CONTROL_LARGE";
-	    NavigationControlType[NavigationControlType["BMAP_NAVIGATION_CONTROL_SMALL"] = 1] = "BMAP_NAVIGATION_CONTROL_SMALL";
-	    NavigationControlType[NavigationControlType["BMAP_NAVIGATION_CONTROL_PAN"] = 2] = "BMAP_NAVIGATION_CONTROL_PAN";
-	    NavigationControlType[NavigationControlType["BMAP_NAVIGATION_CONTROL_ZOOM"] = 3] = "BMAP_NAVIGATION_CONTROL_ZOOM";
-	})(NavigationControlType = exports.NavigationControlType || (exports.NavigationControlType = {}));
+	var MapStatus;
+	(function (MapStatus) {
+	    MapStatus[MapStatus["LOADING"] = 0] = "LOADING";
+	    MapStatus[MapStatus["LOADED"] = 1] = "LOADED";
+	})(MapStatus = exports.MapStatus || (exports.MapStatus = {}));
+	;
 
 
 /***/ },
@@ -95,12 +94,13 @@ module.exports =
 
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
-	var MapStatus;
-	(function (MapStatus) {
-	    MapStatus[MapStatus["LOADING"] = 0] = "LOADING";
-	    MapStatus[MapStatus["LOADED"] = 1] = "LOADED";
-	})(MapStatus = exports.MapStatus || (exports.MapStatus = {}));
-	;
+	var NavigationControlType;
+	(function (NavigationControlType) {
+	    NavigationControlType[NavigationControlType["BMAP_NAVIGATION_CONTROL_LARGE"] = 0] = "BMAP_NAVIGATION_CONTROL_LARGE";
+	    NavigationControlType[NavigationControlType["BMAP_NAVIGATION_CONTROL_SMALL"] = 1] = "BMAP_NAVIGATION_CONTROL_SMALL";
+	    NavigationControlType[NavigationControlType["BMAP_NAVIGATION_CONTROL_PAN"] = 2] = "BMAP_NAVIGATION_CONTROL_PAN";
+	    NavigationControlType[NavigationControlType["BMAP_NAVIGATION_CONTROL_ZOOM"] = 3] = "BMAP_NAVIGATION_CONTROL_ZOOM";
+	})(NavigationControlType = exports.NavigationControlType || (exports.NavigationControlType = {}));
 
 
 /***/ },
@@ -119,7 +119,7 @@ module.exports =
 	};
 	Object.defineProperty(exports, "__esModule", { value: true });
 	var core_1 = __webpack_require__(5);
-	var MapStatus_1 = __webpack_require__(3);
+	var MapStatus_1 = __webpack_require__(2);
 	var defaults_1 = __webpack_require__(6);
 	var Loader_1 = __webpack_require__(7);
 	var CoreOperations_1 = __webpack_require__(8);
@@ -224,7 +224,7 @@ module.exports =
 
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
-	var MapStatus_1 = __webpack_require__(3);
+	var MapStatus_1 = __webpack_require__(2);
 	function loader(ak, offlineOpts, callback, protocol) {
 	    var realProtocol = protocol || location.protocol;
 	    var MAP_URL = realProtocol + "//api.map.baidu.com/api?v=2.0&ak=" + ak + "&callback=baidumapinit&s=" + (realProtocol === 'https:' ? 1 : 0);

@@ -7,10 +7,8 @@ import {
   OnInit,
   OnChanges,
   ChangeDetectionStrategy,
-  ElementRef,
-  NgModule
+  ElementRef
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { MapOptions, OfflineOptions } from './interfaces/Options';
 import { PreviousMarker } from './interfaces/PreviousMarker';
