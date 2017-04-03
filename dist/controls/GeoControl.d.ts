@@ -2,7 +2,7 @@ import { MapOptions } from '../interfaces/Options';
 import { ControlAnchor } from '../enum/ControlAnchor';
 import { Size } from '../interfaces/Size';
 import { Icon } from '../interfaces/Icon';
-export declare const setGeoCtrl: (map: any, opts: MapOptions) => void;
+export declare function setGeoCtrl(map: any, opts: MapOptions): void;
 export interface GeolocationControlOptions {
     anchor?: ControlAnchor;
     offset?: Size;

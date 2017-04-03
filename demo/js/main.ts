@@ -2,17 +2,17 @@ import 'core-js/es6';
 import 'core-js/es7/reflect';
 import 'rxjs';
 import 'zone.js/dist/zone';
-import { NgModule, enableProdMode }      from '@angular/core';
+import { NgModule, enableProdMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import {MainApp} from './demo.app';
-import {Splash} from 'splash-screen';
+import { MainApp } from './demo.app';
+import { Splash } from 'splash-screen';
 
-import { BaiduMap } from '../../';
+import { BaiduMapComponent } from '../../';
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ MainApp, BaiduMap ],
-  bootstrap:    [ MainApp ]
+    imports: [BrowserModule],
+    declarations: [MainApp, BaiduMapComponent],
+    bootstrap: [MainApp]
 })
 class AppModule { }
 
@@ -26,7 +26,7 @@ class App {
         var _this = this;
         Splash.destroy();
         (<any>require('splash-screen/dist/splash.min.css')).unuse();
-        setTimeout(function() {
+        setTimeout(function () {
             if (Splash.isRunning()) {
                 _this.destroySplash();
             }

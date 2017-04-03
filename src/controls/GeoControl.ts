@@ -1,11 +1,11 @@
-import {MapOptions} from '../interfaces/Options';
+import { MapOptions } from '../interfaces/Options';
 
-import {ControlAnchor} from '../enum/ControlAnchor';
-import {Size} from '../interfaces/Size';
-import {Icon} from '../interfaces/Icon';
+import { ControlAnchor } from '../enum/ControlAnchor';
+import { Size } from '../interfaces/Size';
+import { Icon } from '../interfaces/Icon';
 
-export const setGeoCtrl = function(map: any, opts: MapOptions) {
-    var BMap: any = (<any>window)['BMap'];
+export function setGeoCtrl(map: any, opts: MapOptions) {
+    var BMap: any = (<any>window).BMap;
     //enable GeolocationControl
     var geoOpts: any = {};
     if (typeof opts.geolocationCtrl !== 'boolean') {

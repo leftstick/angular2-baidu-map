@@ -1,10 +1,10 @@
-import {MapOptions} from '../interfaces/Options';
+import { MapOptions } from '../interfaces/Options';
 
-import {ControlAnchor} from '../enum/ControlAnchor';
-import {Size} from '../interfaces/Size';
+import { ControlAnchor } from '../enum/ControlAnchor';
+import { Size } from '../interfaces/Size';
 
-export const setScaleCtrl = function(map: any, opts: MapOptions) {
-    var BMap: any = (<any>window)['BMap'];
+export function setScaleCtrl(map: any, opts: MapOptions) {
+    var BMap: any = (<any>window).BMap;
     //enable ScaleControl
     var scaleOpts: any = {};
     if (typeof opts.scaleCtrl !== 'boolean') {

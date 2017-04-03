@@ -1,11 +1,11 @@
-import {MapOptions} from '../interfaces/Options';
+import { MapOptions } from '../interfaces/Options';
 
-import {ControlAnchor} from '../enum/ControlAnchor';
-import {Size} from '../interfaces/Size';
-import {NavigationControlType} from '../enum/NavigationControlType';
+import { ControlAnchor } from '../enum/ControlAnchor';
+import { Size } from '../interfaces/Size';
+import { NavigationControlType } from '../enum/NavigationControlType';
 
-export const setNavigationCtrl = function(map: any, opts: MapOptions) {
-    var BMap: any = (<any>window)['BMap'];
+export function setNavigationCtrl(map: any, opts: MapOptions) {
+    var BMap: any = (<any>window).BMap;
     //enable NavigationControl
     var navOpts: any = {};
     if (typeof opts.navCtrl !== 'boolean') {
