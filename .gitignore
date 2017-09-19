@@ -8,6 +8,7 @@ npm-debug.log
 #js
 
 src/**/*.js
+dist
 
 #demo
 build/
