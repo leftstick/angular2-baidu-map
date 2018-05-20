@@ -146,4 +146,9 @@ export class MapService {
   public getNativeMap(): Promise<BMapInstance> {
     return this._map
   }
+  public getCenter(): Promise<void> {
+    return this._map.then((map: BMapInstance) => {
+      map.getCenter();
+    })
+  }
 }

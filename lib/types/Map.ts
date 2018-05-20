@@ -49,6 +49,7 @@ export interface BMapInstance {
 
   addEventListener(event: string, handler: (e: any) => void): void
   removeEventListener(event: string, handler: () => void): void
+  getCenter(): Point
 }
 
 export interface MapOptions {
