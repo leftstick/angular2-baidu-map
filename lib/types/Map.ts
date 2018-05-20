@@ -6,7 +6,7 @@ import { BTileLayer } from './TileLayer'
 import { isFunction } from '../helpers/object'
 
 export interface BMapConstructor {
-  new(el: HTMLElement | string, opts: MapOptions): BMapInstance
+  new (el: HTMLElement | string, opts: MapOptions): BMapInstance
 }
 
 export interface BMapInstance {
@@ -80,7 +80,7 @@ export interface CenterAndZoom extends Point {
 }
 
 export interface BMapTypeConstructor {
-  new(name: string, layers: BTileLayer | Array<BTileLayer>, options: MapTypeOptions): BMapType
+  new (name: string, layers: BTileLayer | Array<BTileLayer>, options: MapTypeOptions): BMapType
 }
 
 export interface BMapType {

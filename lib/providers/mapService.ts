@@ -18,7 +18,7 @@ export class MapService {
   private _map: Promise<BMapInstance>
   private _mapResolver: (value: BMapInstance) => void
 
-  constructor( @Inject(ScriptLoaderConfig) config: ScriptLoaderConfig, private _loader: ScriptLoader) {
+  constructor(@Inject(ScriptLoaderConfig) config: ScriptLoaderConfig, private _loader: ScriptLoader) {
     nullCheck(config.ak, 'ak must be provided')
 
     this._config = config
@@ -150,5 +150,5 @@ export class MapService {
     return this._map.then((map: BMapInstance) => {
       map.getCenter();
     })
-
   }
+}
