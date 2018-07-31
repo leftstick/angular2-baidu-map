@@ -29,5 +29,5 @@ export interface CircleOptions {
   strokeStyle?: string
   enableMassClear?: boolean
   enableEditing?: boolean
-  enableClicking?: string
+  enableClicking?: boolean
 }
