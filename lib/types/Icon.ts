@@ -43,6 +43,7 @@ export interface IconOptions {
 export interface BIconOptions {
   anchor?: BSize
   imageOffset?: BSize
+  imageSize?: BSize
   infoWindowAnchor?: BSize
   printImageUrl?: string
 }
