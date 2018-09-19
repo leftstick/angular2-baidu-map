@@ -15,7 +15,7 @@ export interface BLabel {
 }
 
 export interface BLabelOptions {
-  offset?: BSizeConstructor
-  position?: BPointConstructor
+  offset?: BSize
+  position?: BPoint
   enableMassClear?: boolean
 }
