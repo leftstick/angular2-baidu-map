@@ -27,6 +27,8 @@ export interface BMarker extends Overlay {
 
   setLabel(label: BLabel): void
   getLabel(): BLabel
+  
+  setTop(isTop: boolean): void
 }
 
 export interface Marker {
