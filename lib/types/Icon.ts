@@ -35,7 +35,6 @@ export interface Icon {
 export interface IconOptions {
   anchor?: Size
   imageOffset?: Size
-  imageSize?: Size
   infoWindowAnchor?: Size
   printImageUrl?: string
 }
