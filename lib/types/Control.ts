@@ -1,5 +1,7 @@
 import { BIcon, Icon } from './Icon'
 import { BSize, Size } from './Size'
+import { BMapType } from './MapType'
+import { MapTypeEnum } from './Map'
 
 export interface BControlConstructor {
   new (opts: any): BControl
@@ -94,10 +96,12 @@ export interface BScaleControlOptions extends BControlOptions {}
 
 export interface MapTypeControlOptions {
   type?: MapTypeControlType
+  mapTypes?: Array<BMapType | MapTypeEnum>
 }
 
 export interface BMapTypeControlOptions {
   type?: MapTypeControlType
+  mapTypes?: Array<BMapType | any>
 }
 
 export interface GeolocationControlOptions extends ControlOptions {

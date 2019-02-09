@@ -14,6 +14,7 @@ import { BIcon, IconOptions } from '../types/Icon'
 import { BMarkerOptions, MarkerOptions } from '../types/Marker'
 import { BPoint, Point } from '../types/Point'
 import { BSize, Size } from '../types/Size'
+import { isMapTypeEnum } from '../types/Map'
 
 import { isNull } from './object'
 import { BMarkerClustererOptions, MarkerClustererOptions } from '../types/MarkerClusterer'
@@ -178,8 +179,14 @@ export function toMapTypeControlOptions(options: MapTypeControlOptions): BMapTyp
   if (!isNull(options.type)) {
     opts.type = options.type
   }
+  if (!isNull(options.mapTypes)) {
+    opts.mapTypes = options.mapTypes.map(mapType => {
+      return isMapTypeEnum(mapType) ? window[mapType] : mapType
+    })
+  }
   return opts
 }
+
 export function toGeolocationOptions(options: GeolocationControlOptions): BGeolocationControlOptions {
   const opts: BGeolocationControlOptions = {}
 
