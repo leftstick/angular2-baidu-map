@@ -6,7 +6,7 @@
     "start": "ng serve",
     "dist": "rm -rf dist dist.tgz && ng-packagr -p lib/package.json && cp README.md ./dist",
     "build": "rm -rf demodist && ng build --prod -bh /angular2-baidu-map/ -d /angular2-baidu-map/ -vc",
-    "deployDemo": "npm run build && git checkout gh-pages && rm -rf *.* assets && mv demodist/* .",
+    "deployDemo": "npm run build && gh-pages -d demodist",
     "lint": "ng lint"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "@angular/compiler-cli": "^5.2.11",
     "@types/node": "^10.10.1",
     "codelyzer": "^4.4.4",
+    "gh-pages": "^2.0.1",
     "highlight.js": "^9.12.0",
     "ng-packagr": "^3.0.6",
     "prettier": "^1.14.3",
