@@ -9,9 +9,15 @@ export interface BPolyline extends Overlay {
   setPath(points: Array<BPoint>): void
   getPath(): void
   setStrokeColor(strokeColor: string): void
+  getStrokeColor(): void
   setStrokeOpacity(strokeOpacity: number): void
+  getStrokeOpacity(): void
   setStrokeWeight(strokeWeight: number): void
+  getStrokeWeight(): void
   setStrokeStyle(strokeStyle: string): void
+  getStrokeStyle(): void
+  getBounds(): void
+  getMap(): void
   enableEditing(): void
   disableEditing(): void
   enableMassClear(): void
