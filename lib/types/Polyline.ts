@@ -7,17 +7,15 @@ export interface BPolylineConstructor {
 
 export interface BPolyline extends Overlay {
   setPath(points: Array<BPoint>): void
-  getPath(): void
+  getPath(): Array<BPoint>
   setStrokeColor(strokeColor: string): void
-  getStrokeColor(): void
+  getStrokeColor(): string
   setStrokeOpacity(strokeOpacity: number): void
-  getStrokeOpacity(): void
+  getStrokeOpacity(): number
   setStrokeWeight(strokeWeight: number): void
-  getStrokeWeight(): void
+  getStrokeWeight(): number
   setStrokeStyle(strokeStyle: string): void
-  getStrokeStyle(): void
-  getBounds(): void
-  getMap(): void
+  getStrokeStyle(): string
   enableEditing(): void
   disableEditing(): void
   enableMassClear(): void
