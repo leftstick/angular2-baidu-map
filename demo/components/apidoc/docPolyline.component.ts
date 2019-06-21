@@ -14,7 +14,7 @@ import { PolylineOptions, Point, MapOptions, BPolyline } from 'angular2-baidu-ma
     <div class="snippet" highlight>
       <pre><code class="html">
     &lt;baidu-map [options]="expression"&gt;
-      &lt;polyline [points]="expression" [options]="expression" (loaded)="expression"&gt;&lt;/polyline&gt;    
+      &lt;polyline [points]="expression" [options]="expression" (loaded)="expression" (clicked)="expression"&gt;&lt;/polyline&gt;    
     &lt;/baidu-map&gt;
     </code></pre>
     </div>
@@ -58,18 +58,37 @@ import { PolylineOptions, Point, MapOptions, BPolyline } from 'angular2-baidu-ma
             >)
           </td>
         </tr>
+        <tr>
+          <td>clicked</td>
+          <td><span class="label">expression</span></td>
+          <td>
+            Expression to evaluate upon polyline click event. (Three objects passed to this callback,
+            <code>e</code> for event, <code>polyline</code> for instance of
+            <a href="http://lbsyun.baidu.com/cms/jsapi/reference/jsapi_reference.html#a3b11" target="_blank"
+              >BMap.Polyline</a
+            >, <code>map</code> for instance of
+            <a href="http://lbsyun.baidu.com/cms/jsapi/reference/jsapi_reference.html#a0b0" target="_blank"
+              >BMap.Map</a
+            >)
+          </td>
+        </tr>
       </tbody>
     </table>
 
     <h2 class="title">Example</h2>
     <baidu-map [options]="opts">
-      <polyline [points]="points" [options]="polylineOptions" (loaded)="polylineLoaded($event)"></polyline>
+      <polyline
+        [points]="points"
+        [options]="polylineOptions"
+        (loaded)="polylineLoaded($event)"
+        (clicked)="polylineClicked($event)"
+      ></polyline>
     </baidu-map>
 
     <div class="snippet" highlight>
       <pre><code class="html">
     &lt;baidu-map [options]="opts"&gt;
-      &lt;polyline [points]="points" [options]="polylineOptions" (loaded)="polylineLoaded($event)"&gt;&lt;/polyline&gt;
+      &lt;polyline [points]="points" [options]="polylineOptions" (loaded)="polylineLoaded($event)" (clicked)="polylineClicked($event)"&gt;&lt;/polyline&gt;
     &lt;/baidu-map&gt;
   </code></pre>
     </div>
@@ -132,6 +151,11 @@ import { PolylineOptions, Point, MapOptions, BPolyline } from 'angular2-baidu-ma
     public polylineLoaded(polyline: BPolyline): void &#123;
       console.log('polyline loaded', polyline)
     &#125;
+
+    public polylineClicked(&#123; polyline &#125;): void &#123;
+      console.log('polyline clicked', click)
+    &#125;
+
   &#125;
   </code></pre>
     </div>
@@ -191,5 +215,9 @@ export class DocPolylineComponent {
 
   public polylineLoaded(polyline: BPolyline): void {
     console.log('polyline loaded', polyline)
+  }
+
+  public polylineClicked({ polyline }): void {
+    console.log('polyline clicked', polyline)
   }
 }

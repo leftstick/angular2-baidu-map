@@ -13,6 +13,7 @@ import { isNull, isUndefined } from '../helpers/object'
 import { toPoints } from '../helpers/transformer'
 import { nullCheck } from '../helpers/validate'
 import { MapService } from '../providers/mapService'
+import { BMapInstance } from '../types/Map'
 import { BPolyline, PolylineOptions } from '../types/Polyline'
 import { Point } from '../types/Point'
 
@@ -24,6 +25,7 @@ export class PolylineComponent implements OnInit, OnChanges, OnDestroy {
   @Input() private options: PolylineOptions
 
   @Output() private loaded = new EventEmitter()
+  @Output() private clicked = new EventEmitter()
 
   private polyline: BPolyline
 
@@ -36,8 +38,9 @@ export class PolylineComponent implements OnInit, OnChanges, OnDestroy {
       .addOverlay(() => {
         return (this.polyline = new window.BMap.Polyline(toPoints(this.points), this.options))
       })
-      .then(() => {
+      .then(({ map }) => {
         this.loaded.emit(this.polyline)
+        this.addListener(this.polyline, map)
       })
   }
 
@@ -84,5 +87,16 @@ export class PolylineComponent implements OnInit, OnChanges, OnDestroy {
     if (!isUndefined(options.strokeWeight)) {
       this.polyline.setStrokeWeight(options.strokeWeight)
     }
+  }
+
+  private addListener(polyline: BPolyline, map: BMapInstance) {
+    polyline.addEventListener('click', (e: any) => {
+      console.log('sfdsfdsfds')
+      this.clicked.emit({
+        e,
+        map,
+        polyline
+      })
+    })
   }
 }
