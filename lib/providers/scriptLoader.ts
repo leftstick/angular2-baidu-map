@@ -12,11 +12,13 @@ export class ScriptLoaderConfig {
   public ak: string = ''
 }
 
-window._scriptLoadState = {}
-window._loadingCallbacks = {}
-
 @Injectable()
 export class ScriptLoader {
+  constructor()  {
+    window._scriptLoadState = {}
+    window._loadingCallbacks = {} 
+  }
+  
   public load(url: string | ScriptType, isMain: boolean = false, cb: () => void): void {
     const scriptKey = isString(url) ? url : url['key']
     const scriptUrls = isString(url) ? [url] : url['scripts']
