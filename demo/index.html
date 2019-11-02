@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>angular2-baidu-map</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" />
     <style media="screen">
-        * {box-sizing: border-box;padding: 0;margin: 0;}
-        html, body{width: 100%;min-height: 100%; display: flex;}
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+      }
     </style>
 
     <style id="splash-spinner">
-        .spinner {position: fixed;border: 4px solid #f3f3f3;border-top: 4px solid #3498db;border-radius: 50%;top: 40%;left: 50%;margin-left: -22.5px;width: 45px;height: 45px;animation: spin 1s linear infinite;}
-        @keyframes spin {0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); }}
+      .spinner {
+        position: fixed;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        top: 40%;
+        left: 50%;
+        margin-left: -22.5px;
+        width: 45px;
+        height: 45px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
-</head>
-
-<body>
-    <demo></demo>
+  </head>
+  <body>
+    <root></root>
     <div class="spinner"></div>
-</body>
-
+  </body>
 </html>

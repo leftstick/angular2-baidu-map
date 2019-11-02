@@ -5,11 +5,11 @@
 ![][dt-url]
 ![][license-url]
 
-Baidu-Map module for Angular5
+Baidu-Map module for Angular8
 
 Read full documentation here: [documentation](https://leftstick.github.io/angular2-baidu-map/)
 
-Read code example here: [example](https://github.com/leftstick/angular5-baidu-map-example)
+Read code example here: [example](https://github.com/leftstick/angular8-baidu-map-example)
 
 > Be aware that it is a totally rewrite version, therefore, backward compatibility is not considered
 

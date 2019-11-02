@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "files": ["demo/main.ts", "demo/polyfills.ts"],
+  "include": ["demo/**/*.ts"],
+  "exclude": ["demo/test.ts", "demo/**/*.spec.ts"]
+}

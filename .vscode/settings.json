@@ -1,10 +1,7 @@
 {
-  // Place your settings in this file to overwrite default and user settings.
   "editor.formatOnSave": true,
-  "html.format.enable": false,
-  "tslint.enable": true,
-  "javascript.validate.enable": false,
   "typescript.validate.enable": true,
-  "prettier.disableLanguages": ["json"],
-  "npm.updateStrategy": "SEMVER"
+  "stylusSupremacy.insertBraces": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true
 }
