@@ -13,7 +13,8 @@ Read code example here: [example](https://github.com/leftstick/angular8-baidu-ma
 
 > Be aware that it is a totally rewrite version, therefore, backward compatibility is not considered
 
-> If you are using the previous version `3.x`, [read it here](https://github.com/leftstick/angular2-baidu-map/tree/3.x)
+* If you are using the previous version `3.x`, [read it here](https://github.com/leftstick/angular2-baidu-map/tree/3.x)
+* If you are using the previous version `4.x`, [read it here](https://github.com/leftstick/angular2-baidu-map/tree/4.x)
 
 ## Getting started
 
