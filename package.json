@@ -3,7 +3,7 @@
   "version": "8.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --hmr -o",
+    "start": "ng serve",
     "build": "ng build",
     "demo": "ng build demo --prod && gh-pages -d demodist/",
     "lint": "ng lint"
@@ -29,13 +29,13 @@
     "@angular/cli": "~8.3.17",
     "@angular/compiler-cli": "~8.2.13",
     "@angular/language-service": "~8.2.13",
-    "@types/node": "~8.9.4",
-    "codelyzer": "^5.0.0",
+    "@types/node": "~12.12.5",
+    "codelyzer": "^5.2.0",
     "highlight.js": "^9.16.2",
-    "ng-packagr": "^5.4.0",
-    "ts-node": "~7.0.0",
+    "ng-packagr": "^5.7.1",
+    "ts-node": "~8.4.1",
     "tsickle": "^0.37.0",
-    "tslint": "~5.15.0",
+    "tslint": "~5.20.0",
     "typescript": "~3.5.3"
   }
 }
