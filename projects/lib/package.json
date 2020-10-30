@@ -1,8 +1,8 @@
 {
   "name": "angular2-baidu-map",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "peerDependencies": {
-    "@angular/common": "^8.2.13",
-    "@angular/core": "^8.2.13"
+    "@angular/common": ">=8.0.0",
+    "@angular/core": ">=8.0.0"
   }
 }
