@@ -15,10 +15,10 @@ import { BTrafficLayer, TrafficLayerOptions } from '../types/TrafficLayer'
 })
 export class TrafficLayerComponent implements OnInit, OnDestroy {
   @Input()
-  private options: TrafficLayerOptions
+  public options: TrafficLayerOptions
 
   @Output()
-  private loaded = new EventEmitter()
+  public loaded = new EventEmitter()
 
   private trafficlayer: BTrafficLayer
 

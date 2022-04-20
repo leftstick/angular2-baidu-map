@@ -60,10 +60,10 @@ import { nullCheck } from '../helpers/validate'
 })
 export class MapComponent
   implements OnInit, AfterViewInit, OnDestroy, OnChanges {
-  @Input() private options: MapOptions
+  @Input() public options: MapOptions
 
-  @Output() private loaded = new EventEmitter()
-  @Output() private clicked = new EventEmitter()
+  @Output() public loaded = new EventEmitter()
+  @Output() public clicked = new EventEmitter()
 
   @ViewChild('mapinstance', { static: false }) private mapInstance: ElementRef
 

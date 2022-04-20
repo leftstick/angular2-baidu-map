@@ -26,11 +26,11 @@ import { Point } from '../types/Point'
   selector: 'marker'
 })
 export class MarkerComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() private point: Point
-  @Input() private options: MarkerOptions
+  @Input() public point: Point
+  @Input() public options: MarkerOptions
 
-  @Output() private loaded = new EventEmitter()
-  @Output() private clicked = new EventEmitter()
+  @Output() public loaded = new EventEmitter()
+  @Output() public clicked = new EventEmitter()
 
   private marker: BMarker
 

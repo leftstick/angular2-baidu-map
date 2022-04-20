@@ -20,11 +20,11 @@ import { Point } from '../types/Point'
   selector: 'circle'
 })
 export class CircleComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() private center: Point
-  @Input() private radius: number
-  @Input() private options: CircleOptions
+  @Input() public center: Point
+  @Input() public radius: number
+  @Input() public options: CircleOptions
 
-  @Output() private loaded = new EventEmitter()
+  @Output() public loaded = new EventEmitter()
 
   private circle: BCircle
 

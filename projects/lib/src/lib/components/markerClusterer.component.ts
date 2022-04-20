@@ -37,9 +37,9 @@ const LIB_URLS = {
   selector: 'marker-clusterer'
 })
 export class MarkerClustererComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() private options: MarkerClustererOptions
+  @Input() public options: MarkerClustererOptions
 
-  @Output() private loaded = new EventEmitter()
+  @Output() public loaded = new EventEmitter()
 
   private markerClusterer: BMarkerClusterer
 

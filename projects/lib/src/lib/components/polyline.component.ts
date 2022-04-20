@@ -21,11 +21,11 @@ import { Point } from '../types/Point'
   selector: 'polyline'
 })
 export class PolylineComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() private points: Array<Point>
-  @Input() private options: PolylineOptions
+  @Input() public points: Array<Point>
+  @Input() public options: PolylineOptions
 
-  @Output() private loaded = new EventEmitter()
-  @Output() private clicked = new EventEmitter()
+  @Output() public loaded = new EventEmitter()
+  @Output() public clicked = new EventEmitter()
 
   private polyline: BPolyline
 

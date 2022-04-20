@@ -20,10 +20,10 @@ import { Point } from '../types/Point'
   selector: 'polygon'
 })
 export class PolygonComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() private points: Array<Point>
-  @Input() private options: PolygonOptions
+  @Input() public points: Array<Point>
+  @Input() public options: PolygonOptions
 
-  @Output() private loaded = new EventEmitter()
+  @Output() public loaded = new EventEmitter()
 
   private polygon: BPolygon
 

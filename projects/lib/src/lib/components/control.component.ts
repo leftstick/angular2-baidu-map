@@ -22,10 +22,10 @@ import { BControl, ControlType } from '../types/Control'
   selector: 'control'
 })
 export class ControlComponent implements OnInit, OnDestroy {
-  @Input() private type: ControlType
-  @Input() private options: { [key: string]: any }
+  @Input() public type: ControlType
+  @Input() public options: { [key: string]: any }
 
-  @Output() private loaded = new EventEmitter()
+  @Output() public loaded = new EventEmitter()
 
   private control: BControl
 

@@ -21,10 +21,10 @@ import { BMapInstance } from '../types/Map'
 })
 export class CanvasLayerComponent implements OnInit, OnDestroy {
   @Input()
-  private options: CanvasLayerOptions
+  public options: CanvasLayerOptions
 
   @Output()
-  private loaded = new EventEmitter()
+  public loaded = new EventEmitter()
 
   private canvaslayer: BCanvasLayer
 

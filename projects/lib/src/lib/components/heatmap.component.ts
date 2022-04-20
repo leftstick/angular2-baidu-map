@@ -20,10 +20,10 @@ const LIB_URL = `https://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.j
   selector: 'heatmap'
 })
 export class HeatmapComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() private dataset: HeatmapData
-  @Input() private options: HeatmapOptions
+  @Input() public dataset: HeatmapData
+  @Input() public options: HeatmapOptions
 
-  @Output() private loaded = new EventEmitter()
+  @Output() public loaded = new EventEmitter()
 
   private heatmap: BHeatmap
 

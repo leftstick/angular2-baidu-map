@@ -20,13 +20,13 @@ import { BPixel } from '../types/Pixel'
 })
 export class TileLayerComponent implements OnInit, OnDestroy {
   @Input()
-  private getTilesUrl: GetTilesUrlFunc
+  public getTilesUrl: GetTilesUrlFunc
 
   @Input()
-  private options: TileLayerOptions
+  public options: TileLayerOptions
 
   @Output()
-  private loaded = new EventEmitter()
+  public loaded = new EventEmitter()
 
   private tilelayer: BTileLayer
 
